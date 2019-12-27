@@ -1,3 +1,13 @@
+# Changes here:
+* Removed an unnecessary realtime status report on planner block index = (BLOCK_BUFFER_SIZE - 3)
+* Increased number of planner blocks (BLOCK_BUFFER_SIZE = 32)
+* Increased SEGMENT_BUFFER_SIZE to 24 (was 6)
+* Imported config from Atollic compiler and set up parameters for STM32CubeIDE
+
+Issues:
+* Disabled USB init because I can't get it to work properly.
+
+
 # SuperGerbil
 STM32 driven ARM Grbl firmware
 ![GitHub Logo](https://awesome.tech/wp-content/uploads/2018/11/20181030_103220-1-e1547624499622.jpg)
