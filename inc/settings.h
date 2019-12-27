@@ -45,6 +45,7 @@
 // Define status reporting boolean enable bit flags in settings.status_report_mask
 #define BITFLAG_RT_STATUS_POSITION_TYPE     bit(0)
 #define BITFLAG_RT_STATUS_BUFFER_STATE      bit(1)
+#define BITFLAG_RT_STATUS_AXIS_NGT_3		bit(2)   // If set, do not report any axis > 3
 
 // Define settings restore bitflags.
 #define SETTINGS_RESTORE_DEFAULTS bit(0)

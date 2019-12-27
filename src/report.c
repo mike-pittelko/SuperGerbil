@@ -38,11 +38,16 @@ static void report_util_gcode_modes_M() { printPgmString(PSTR(" M")); }
 // static void report_util_comment_line_feed() { serial_write(')'); report_util_line_feed(); }
 static void report_util_axis_values(float *axis_value) {
   uint8_t idx;
-  for (idx=0; idx<N_AXIS; idx++) {
-    printFloat_CoordValue(axis_value[idx]);
-    if (idx < (N_AXIS-1)) { serial_write(','); }
-  }
-}
+  uint8_t maxaxis = N_AXIS;
+
+  if (bit_istrue(settings.status_report_mask, BITFLAG_RT_STATUS_INDEX_NGT_3) & (N_AXIS > 3))  {maxaxis = 3;}
+
+  for (idx=0; idx<maxaxis; idx++) {
+	 printFloat_CoordValue(axis_value[idx]);
+     if (idx < (maxaxis-1)) { serial_write(','); }
+   }
+ }
+
 
 
 static void report_util_setting_string(uint8_t n) {
