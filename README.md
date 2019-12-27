@@ -3,6 +3,7 @@
 * Increased number of planner blocks (BLOCK_BUFFER_SIZE = 32)
 * Increased SEGMENT_BUFFER_SIZE to 24 (was 6)
 * Imported config from Atollic compiler and set up parameters for STM32CubeIDE
+
 Issues:
 * Disabled USB init because I can't get it to work properly.
 
