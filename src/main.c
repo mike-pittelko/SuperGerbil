@@ -119,7 +119,7 @@ int main(void)
     RCC_HCLKConfig(RCC_SYSCLK_Div1); // High speed data bus
     RCC_PCLK1Config(RCC_HCLK_Div2);//paul high speed peripheral bus
     RCC_PCLK2Config(RCC_HCLK_Div1); // low speed peripheral bus
-    //SystemInit();
+    //SystemInit();  // This should have been already called in startup_stm32f10x_xx.s
 
 
     //RCC_SYSCLKConfig(RCC_SYSCLKSource_PLLCLK);//paul
@@ -138,9 +138,8 @@ int main(void)
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13;
 	GPIO_Init(GPIOC, &GPIO_InitStructure);//GPIOC
 #endif
-//uint8_t setflagmessage = 0;
 
-	//Set_System();
+	Set_System();
 //#ifndef USEUSB
 	USART1_Configuration(115200);//230400 is possible
 //#else
@@ -160,7 +159,7 @@ int main(void)
 	eeprom_init();
 #endif
 	SysTick->CTRL &= 0xfffffffb;
-	//SysTick_Config(1000);//paul lost usb on a device with no recovery until a full erase done
+	SysTick_Config(1000);//<<was commented out>>paul lost usb on a device with no recovery until a full erase done
 
 #endif
   // Initialize system upon power-up.
@@ -315,13 +314,6 @@ void LED_TRACE(char count, int delay)
 		delay_ms(delay);
 	}
 }
-//void myputchar(unsigned char c)
-//{
-//uart_putc(c, USART1);
-//}
-//unsigned char mygetchar()
-//{
-//return uart_getc(USART1);
-//}
+
 
 #endif

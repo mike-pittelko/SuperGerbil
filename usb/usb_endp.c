@@ -112,8 +112,8 @@ void SOF_Callback(void)
 
 void RESET_Callback(void)
 {
-	uint8_t setflagmessage = 1;
-		//set_init_msg_flag();
+	//uint8_t setflagmessage = 1;
+	set_init_msg_flag();
 
 }
 /******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/

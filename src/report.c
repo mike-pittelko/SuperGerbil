@@ -40,7 +40,7 @@ static void report_util_axis_values(float *axis_value) {
   uint8_t idx;
   uint8_t maxaxis = N_AXIS;
 
-  if (bit_istrue(settings.status_report_mask, BITFLAG_RT_STATUS_INDEX_NGT_3) & (N_AXIS > 3))  {maxaxis = 3;}
+  if (bit_istrue(settings.status_report_mask, BITFLAG_RT_STATUS_AXIS_NGT_3) & (N_AXIS > 3))  {maxaxis = 3;}
 
   for (idx=0; idx<maxaxis; idx++) {
 	 printFloat_CoordValue(axis_value[idx]);
