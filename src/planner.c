@@ -44,7 +44,7 @@ static planner_t pl;
 uint8_t plan_next_block_index(uint8_t block_index)
 {
   block_index++;
-  if (block_index == BLOCK_BUFFER_SIZE) { block_index = 0;}  // wrap ring
+  if (block_index == BLOCK_BUFFER_SIZE) { block_index = 0;} // wrap ring
   return(block_index);
 }
 
